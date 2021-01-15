@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Ranged_Attack</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>rule->[rangedAttack]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_File">
+          <keyword>rangedAttack</keyword>
+          <path>NameBanks/RangedAttack</path>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Melee_Attack</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>rule->[meleeAttack]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_File">
+          <keyword>meleeAttack</keyword>
+          <path>NameBanks/MeleeAttack</path>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
+
+
+
+
+
+
+
