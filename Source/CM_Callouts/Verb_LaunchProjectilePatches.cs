@@ -23,11 +23,7 @@ namespace CM_Callouts
 
                 if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(0.25f))
                 {
-                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-                    if (calloutTracker != null)
-                    {
-                        calloutTracker.AttemptCallout(__instance.CasterPawn, CalloutDefOf.CM_Callouts_RulePack_Ranged_Attack);
-                    }
+                    CalloutUtility.AttemptRangedAttackCallout(__instance.CasterPawn, __instance);
                 }
             }
         }

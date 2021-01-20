@@ -55,8 +55,11 @@
   <ItemGroup>
     <Compile Include="CalloutDefOf.cs" />
     <Compile Include="CalloutMod.cs" />
+    <Compile Include="CalloutConstantByTraitDef.cs" />
     <Compile Include="CalloutTracker.cs" />
+    <Compile Include="CalloutUtility.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Pawn_DraftController_Patches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Verb_LaunchProjectilePatches.cs" />
     <Compile Include="VerbPatches.cs" />

@@ -1,33 +1,136 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <CM_Callouts.CalloutConstantByTraitDef>
+	<defName>CM_Callout_SpicyTraits</defName>
+	<traits>
+	  <li>Bloodlust</li>
+      <li>Cannibal</li>
+	  <li>Psychopath</li>
+	  <li>Abrasive</li>
+    </traits>
+	<name>SPICY</name>
+	<value>true</value>
+  </CM_Callouts.CalloutConstantByTraitDef>
+  
+  <CM_Callouts.CalloutConstantByTraitDef>
+	<defName>CM_Callout_MildTraits</defName>
+	<traits>
+	  <li>Kind</li>
+      <li>Wimp</li>
+    </traits>
+	<name>MILD</name>
+	<value>true</value>
+  </CM_Callouts.CalloutConstantByTraitDef>
+
   <RulePackDef>
-    <defName>CM_Callouts_RulePack_Ranged_Attack</defName>
+    <defName>CM_Callouts_RulePack_Attack_Common</defName>
     <rulePack>
       <rulesStrings>
-        <li>rule->[rangedAttack]</li>
+	  
+		<li>rule(MILD==true)->don't make me hurt you!</li>
+		
+		<li>rule(SPICY!=true)->take this!</li>
+		
+	    <li>rule->I do as [INITIATOR_WEAPON_title] commands!</li>
+		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
+		<li>rule->time to kiss your ass goodbye!</li>
+		
+		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
+		
+		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
+		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
+		
+		<li>callout_noun_insult_vulgar->bitch</li>
+		<li>callout_noun_insult_vulgar->motherfucker</li>
+		<li>callout_noun_insult_vulgar->asshole</li>
+		<li>callout_noun_insult_vulgar->shithead</li>
+		
+		<li>callout_verb_decorate->decorate</li>
+		<li>callout_verb_decorate->adorn</li>
+		<li>callout_verb_decorate->festoon</li>
+		<li>callout_verb_decorate->drape</li>
+		<li>callout_verb_decorate->paint</li>
+		<li>callout_verb_decorate->cover</li>
+		
+		<li>callout_noun_room->bedroom</li>
+		<li>callout_noun_room->kitchen</li>
+		<li>callout_noun_room->bathroom</li>
+		<li>callout_noun_room->dining room</li>
+		<li>callout_noun_room->foyer</li>
+		<li>callout_noun_room->rec room</li>
+		<li>callout_noun_room->closet</li>
+		<li>callout_noun_room->garden</li>
+		
       </rulesStrings>
-      <rulesRaw>
-        <li Class="Rule_File">
-          <keyword>rangedAttack</keyword>
-          <path>NameBanks/RangedAttack</path>
-        </li>
-      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Ranged_Attack</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+	    <li>rule->eat my [INITIATOR_WEAPON_projectile_labelPlural]!</li>
+		<li>rule(p=0.5)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun!</li>
+		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever!</li>
+
+		
+	    <!--<li>rule->say goodbye...</li>
+        <li>rule->end-of-the-line for you, pal!</li>
+        <li>rule->time for a dirt nap!</li>
+        <li>rule->say hello to the devil for me!</li>
+        <li>rule->I'll see you in hell!</li>
+        
+        <li>rule->vengeance is mine!</li>
+        <li>rule->wake up, time to die!</li>
+        <li>rule->this... is by boomstick!</li>-->
+      </rulesStrings>
     </rulePack>
   </RulePackDef>
   
   <RulePackDef>
     <defName>CM_Callouts_RulePack_Melee_Attack</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Common</li>
+    </include>
     <rulePack>
       <rulesStrings>
-        <li>rule->[meleeAttack]</li>
+	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
+		
+		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel]!</li>
+        <li>rule->I'll knock your ass into the next quadrum!</li>
+		
+		<li>rule->(MILD!=true)I'm going to beat you like a [Animal]</li>
+		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
+		
+
       </rulesStrings>
-      <rulesRaw>
-        <li Class="Rule_File">
-          <keyword>meleeAttack</keyword>
-          <path>NameBanks/MeleeAttack</path>
-        </li>
-      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Drafted</defName>
+    <rulePack>
+      <rulesStrings>
+	  
+	    <li>rule(MILD==true)->bring me my brown pants!</li>
+		
+		<li>rule(SPICY!=true)->I fight for [ConceptPositive]!</li>
+		
+		<li>rule->for [INITIATOR_factionName]!</li>
+		<li>rule->you have my [INITIATOR_WEAPON_label]!</li>
+		<li>rule->ready to roll!</li>
+		<li>rule->let's do this!</li>
+		<li>rule->where's the action at?</li>
+		<li>rule->show me ya moves!</li>
+        <li>rule->locked and loaded!</li>
+        <li>rule->show me an ass and I'll kick it!</li>
+        <li>rule->hell yeah, I'm ready! Are you?</li>
+
+      </rulesStrings>
     </rulePack>
   </RulePackDef>
 

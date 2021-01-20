@@ -23,11 +23,7 @@ namespace CM_Callouts
 
                 if (__instance.CurrentTarget.Thing is Pawn && Rand.Chance(0.25f))
                 {
-                    CalloutTracker calloutTracker = Current.Game.World.GetComponent<CalloutTracker>();
-                    if (calloutTracker != null)
-                    {
-                        calloutTracker.AttemptCallout(__instance.CasterPawn, CalloutDefOf.CM_Callouts_RulePack_Melee_Attack);
-                    }
+                    CalloutUtility.AttemptMeleeAttackCallout(__instance.CasterPawn, __instance);
                 }
             }
         }

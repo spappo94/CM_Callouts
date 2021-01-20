@@ -34,24 +34,46 @@ namespace CM_Callouts
                 pawnCalloutExpireTick = pawnCalloutExpireTick.Where(kvp => kvp.Value > currentTickPlusHash).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
 
-        public void AttemptCallout(Pawn pawn, RulePackDef rulePack)
+        public bool CanCalloutNow(Pawn pawn)
         {
-            if (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned)
-            {
-                // Throw some text somewhere
-                string text = GrammarResolver.Resolve(rulePack.RulesPlusIncludes[0].keyword, new GrammarRequest { Includes = { rulePack } });
-                if (!text.NullOrEmpty())
-                    MoteMaker.ThrowText(pawn.Position.ToVector3Shifted(), pawn.Map, text);
-                else
-                    Logger.WarningFormat(this, " Could not find text for requested {1} by {0}", pawn, rulePack);
+            return (pawn != null && pawn.def.race.Humanlike && !pawn.Dead && pawn.Spawned && !pawnCalloutExpireTick.ContainsKey(pawn));
+        }
 
-                // Mark tick when pawn can callout again
-                int expireTick = Find.TickManager.TicksGame + ticksBetweenCallouts + hashCache;
-                if (!pawnCalloutExpireTick.ContainsKey(pawn))
-                    pawnCalloutExpireTick.Add(pawn, expireTick);
-                else
-                    pawnCalloutExpireTick[pawn] = expireTick;
+        public void RequestCallout(Pawn pawn, RulePackDef rulePack, GrammarRequest grammarRequest)
+        {
+            if (!CanCalloutNow(pawn))
+                return;
+    
+            if (pawn.InMentalState)
+            {
+                grammarRequest.Constants["SPICY"] = "true";
             }
+            else if (pawn.story != null && pawn.story.traits != null)
+            {
+                foreach(CalloutConstantByTraitDef constantByTraitDef in DefDatabase<CalloutConstantByTraitDef>.AllDefs)
+                {
+                    foreach (TraitDef traitDef in constantByTraitDef.traits)
+                    {
+                        if (pawn.story.traits.allTraits.Any(trait => trait.def == traitDef))
+                        {
+                            Logger.MessageFormat(this, "{0}, {1}, {2}", pawn, constantByTraitDef.name, constantByTraitDef.value);
+                            grammarRequest.Constants[constantByTraitDef.name] = constantByTraitDef.value;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            string text = GrammarResolver.Resolve(rulePack.RulesPlusIncludes[0].keyword, grammarRequest);
+            if (!text.NullOrEmpty())
+                MoteMaker.ThrowText(pawn.Position.ToVector3Shifted(), pawn.Map, text);
+            else
+                Logger.WarningFormat(this, " Could not find text for requested {1} by {0}", pawn, rulePack);
+
+            // Mark tick when pawn can callout again
+            int expireTick = Find.TickManager.TicksGame + ticksBetweenCallouts + hashCache;
+
+            pawnCalloutExpireTick.Add(pawn, expireTick);
         }
     }
 }
