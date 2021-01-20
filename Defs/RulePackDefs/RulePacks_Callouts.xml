@@ -28,15 +28,20 @@
     <rulePack>
       <rulesStrings>
 	  
+	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
 		<li>rule(MILD==true)->don't make me hurt you!</li>
-		
-		<li>rule(SPICY!=true)->take this!</li>
+		<li>rule(MILD==true)->take that!</li>
 		
 	    <li>rule->I do as [INITIATOR_WEAPON_title] commands!</li>
 		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
 		<li>rule->time to kiss your ass goodbye!</li>
+		<li>rule->time for a dirt nap!</li>
+		<li>rule->say hello to the devil for me!</li>
+		<li>rule->end-of-the-line for you, pal!</li>
 		
 		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
+        <li>rule(MILD!=true)->I'll see you in hell!</li>
+        <li>rule(MILD!=true)->wake up, time to die!</li>
 		
 		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
 		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
@@ -62,6 +67,37 @@
 		<li>callout_noun_room->closet</li>
 		<li>callout_noun_room->garden</li>
 		
+		<li>callout_verb_rip->rip</li>
+		<li>callout_verb_rip->tear</li>
+		
+		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
+		<li>callout_noun_bodypart->callout_noun_bodypart_internal</li>
+		
+		<li>callout_noun_bodypart_external->leg</li>
+		<li>callout_noun_bodypart_external->arm</li>
+		<li>callout_noun_bodypart_external->face</li>
+		
+		<li>callout_noun_bodypart_internal->heart</li>
+		<li>callout_noun_bodypart_internal->brain</li>
+		<li>callout_noun_bodypart_internal->liver</li>
+		<li>callout_noun_bodypart_internal->lung</li>
+		<li>callout_noun_bodypart_internal->pancreas</li>
+		<li>callout_noun_bodypart_internal->intestines</li>
+		<li>callout_noun_bodypart_internal->stomach</li>
+		<li>callout_noun_bodypart_internal->spine</li>
+		
+		<li>callout_noun_orifice->ass</li>
+		<li>callout_noun_orifice->mouth</li>
+		<li>callout_noun_orifice->ear</li>
+		<li>callout_noun_orifice->nose</li>
+		
+		<li>callout_noun_meal->breakfast</li>
+		<li>callout_noun_meal->second breakfast</li>
+		<li>callout_noun_meal->brunch</li>
+		<li>callout_noun_meal->lunch</li>
+		<li>callout_noun_meal->dinner</li>
+		<li>callout_noun_meal->a snack</li>
+		
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -73,20 +109,20 @@
     </include>
     <rulePack>
       <rulesStrings>
-	    <li>rule->eat my [INITIATOR_WEAPON_projectile_labelPlural]!</li>
+	    
+		<li>rule(MILD==true)->yippie kayak, other buckets!</li>
+		
+	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural]!</li>
 		<li>rule(p=0.5)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun!</li>
 		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever!</li>
-
+		<li>rule->say hello to the devil for me!</li>
+		<li>rule->say goodbye...</li>
 		
-	    <!--<li>rule->say goodbye...</li>
-        <li>rule->end-of-the-line for you, pal!</li>
-        <li>rule->time for a dirt nap!</li>
-        <li>rule->say hello to the devil for me!</li>
-        <li>rule->I'll see you in hell!</li>
-        
-        <li>rule->vengeance is mine!</li>
-        <li>rule->wake up, time to die!</li>
-        <li>rule->this... is by boomstick!</li>-->
+        <li>rule(MILD!=true)->I'll see you in hell!</li>
+        <li>rule(MILD!=true)->wake up, time to die!</li>
+		
+		<li>rule(SPICY==true)->keep hugging that [RECIPIENT_COVER_label], [callout_noun_insult_vulgar]!</li>
+	    
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -98,14 +134,19 @@
     </include>
     <rulePack>
       <rulesStrings>
-	    <li>rule(MILD==true)->I'll stop you, you [Enemy]!</li>
-		
+
 		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel]!</li>
         <li>rule->I'll knock your ass into the next quadrum!</li>
 		
-		<li>rule->(MILD!=true)I'm going to beat you like a [Animal]</li>
+		<li>rule(MILD!=true)->I'm going to beat you like a [Animal]</li>
 		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
+		<li>rule(MILD!=true)->I'm going to build a boot factory in your ass!</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole!</li>
+		<li>rule(MILD!=true)->I hope you're ready for a [WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it!</li>
 		
+		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal]!</li>
+		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice]!</li>
 
       </rulesStrings>
     </rulePack>
@@ -117,10 +158,15 @@
       <rulesStrings>
 	  
 	    <li>rule(MILD==true)->bring me my brown pants!</li>
+		<li>rule(MILD==true)->is there no one else?</li>
+		<li>rule(MILD==true)->who, me?</li>
+		<li>rule(MILD==true)->can we talk about this?!</li>
 		
 		<li>rule(SPICY!=true)->I fight for [ConceptPositive]!</li>
+		<li>rule(SPICY!=true)->my [PersonalCharacteristic] is beyond reproach!</li>
 		
 		<li>rule->for [INITIATOR_factionName]!</li>
+		<li>rule->let's make [INITIATOR_factionName] great again!</li>
 		<li>rule->you have my [INITIATOR_WEAPON_label]!</li>
 		<li>rule->ready to roll!</li>
 		<li>rule->let's do this!</li>
@@ -129,6 +175,8 @@
         <li>rule->locked and loaded!</li>
         <li>rule->show me an ass and I'll kick it!</li>
         <li>rule->hell yeah, I'm ready! Are you?</li>
+		
+		<li>rule(SPICY==true)->the [AdjectiveBadass] [PersonBadass] of [ConceptBadass] is here!</li>
 
       </rulesStrings>
     </rulePack>
