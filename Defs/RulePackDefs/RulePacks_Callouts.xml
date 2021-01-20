@@ -36,18 +36,28 @@
 		<li>rule->say hello to my little [INITIATOR_WEAPON_label]!</li>
 		<li>rule->time to kiss your ass goodbye!</li>
 		<li>rule->time for a dirt nap!</li>
-		<li>rule->say hello to the devil for me!</li>
+		<li>rule->say hello to [callout_noun_afterlife_greeter] for me!</li>
 		<li>rule->end-of-the-line for you, pal!</li>
+		<li>rule->say goodbye...</li>
 		
+        <li>rule(MILD!=true)->I'll see you in hell!</li>
+        <li>rule(MILD!=true)->wake up, time to die!</li>
 		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label]s don't kill people... I kill people!</li>
         <li>rule(MILD!=true)->I'll see you in hell!</li>
         <li>rule(MILD!=true)->wake up, time to die!</li>
+		<li>rule(MILD!=true)->eat shit and die!</li>
 		
 		<li>rule(SPICY==true)->go to sleep, [callout_noun_insult_vulgar]!</li>
 		<li>rule(SPICY==true)->I'm going to [callout_verb_decorate] my [callout_noun_room] with your [Gore]!</li>
+		<li>rule(SPICY==true)->after this I'll kill your [PersonFamily]!</li>
+		
+		<li>callout_noun_afterlife_greeter->the devil</li>
+		<li>callout_noun_afterlife_greeter->the grim reaper</li>
+		<li>callout_noun_afterlife_greeter->the angels</li>
+		<li>callout_noun_afterlife_greeter->Kim Jong-il</li>
 		
 		<li>callout_noun_insult_vulgar->bitch</li>
-		<li>callout_noun_insult_vulgar->motherfucker</li>
+		<li>callout_noun_insult_vulgar->mother-fucker</li>
 		<li>callout_noun_insult_vulgar->asshole</li>
 		<li>callout_noun_insult_vulgar->shithead</li>
 		
@@ -68,6 +78,8 @@
 		<li>callout_noun_room->garden</li>
 		
 		<li>callout_verb_rip->rip</li>
+		<li>callout_verb_rip->cut</li>
+		<li>callout_verb_rip->pull</li>
 		<li>callout_verb_rip->tear</li>
 		
 		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
@@ -115,11 +127,6 @@
 	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural]!</li>
 		<li>rule(p=0.5)->my [INITIATOR_WEAPON_projectile_labelPlural] will blot out the sun!</li>
 		<li>rule->you can't hide behind that [RECIPIENT_COVER_label] forever!</li>
-		<li>rule->say hello to the devil for me!</li>
-		<li>rule->say goodbye...</li>
-		
-        <li>rule(MILD!=true)->I'll see you in hell!</li>
-        <li>rule(MILD!=true)->wake up, time to die!</li>
 		
 		<li>rule(SPICY==true)->keep hugging that [RECIPIENT_COVER_label], [callout_noun_insult_vulgar]!</li>
 	    
@@ -137,6 +144,7 @@
 
 		<li>rule->taste my [INITIATOR_WEAPON_stuffLabel]!</li>
         <li>rule->I'll knock your ass into the next quadrum!</li>
+		<li>rule->come get some!</li>
 		
 		<li>rule(MILD!=true)->I'm going to beat you like a [Animal]</li>
 		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
@@ -145,6 +153,7 @@
 		<li>rule(MILD!=true)->I hope you're ready for a [WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it!</li>
 		
+		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it!</li>
 		<li>rule(SPICY==true)->I can't wait to harvest your [callout_noun_bodypart_internal]!</li>
 		<li>rule(SPICY==true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and shove it in your [callout_noun_orifice]!</li>
 
@@ -160,10 +169,11 @@
 	    <li>rule(MILD==true)->bring me my brown pants!</li>
 		<li>rule(MILD==true)->is there no one else?</li>
 		<li>rule(MILD==true)->who, me?</li>
+		<li>rule(MILD==true)->why me!?</li>
 		<li>rule(MILD==true)->can we talk about this?!</li>
 		
 		<li>rule(SPICY!=true)->I fight for [ConceptPositive]!</li>
-		<li>rule(SPICY!=true)->my [PersonalCharacteristic] is beyond reproach!</li>
+		<li>rule(SPICY!=true)->my [PersonalCharacteristic] should come in handy!</li>
 		
 		<li>rule->for [INITIATOR_factionName]!</li>
 		<li>rule->let's make [INITIATOR_factionName] great again!</li>
@@ -175,6 +185,7 @@
         <li>rule->locked and loaded!</li>
         <li>rule->show me an ass and I'll kick it!</li>
         <li>rule->hell yeah, I'm ready! Are you?</li>
+		<li>rule->the day of [ConceptBadass] is here!</li>
 		
 		<li>rule(SPICY==true)->the [AdjectiveBadass] [PersonBadass] of [ConceptBadass] is here!</li>
 
