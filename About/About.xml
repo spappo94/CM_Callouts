@@ -7,7 +7,7 @@
 	<supportedVersions>
 		<li>1.2</li>
 	</supportedVersions>
-	<description>Adds callouts in text form whenever a humanlike pawn attempts to attack another pawn.</description>
+	<description>Adds callouts in text form whenever humanlike pawn triggers certain events.</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
