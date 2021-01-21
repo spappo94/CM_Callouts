@@ -150,7 +150,7 @@
 		<li>rule(MILD!=true)->now you've awakened the [AnimalBadass]!</li>
 		<li>rule(MILD!=true)->I'm going to build a boot factory in your ass!</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] you another [callout_noun_orifice]-hole!</li>
-		<li>rule(MILD!=true)->I hope you're ready for a [WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
+		<li>rule(MILD!=true)->I hope you're ready for a [INITIATOR_WEAPON_label] in your [callout_noun_bodypart_internal]!</li>
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] off your [callout_noun_bodypart_external] and beat you to death with it!</li>
 		
 		<li>rule(MILD!=true)->I'll [callout_verb_rip] out your [callout_noun_bodypart_internal] and eat it!</li>
