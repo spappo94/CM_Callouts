@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <CM_Callouts.CalloutConstantByTraitDef>
+	<defName>CM_Callout_SpicyTraits</defName>
+	<traits>
+	  <li>Bloodlust</li>
+      <li>Cannibal</li>
+	  <li>Psychopath</li>
+	  <li>Abrasive</li>
+    </traits>
+	<name>SPICY</name>
+	<value>true</value>
+  </CM_Callouts.CalloutConstantByTraitDef>
+  
+  <CM_Callouts.CalloutConstantByTraitDef>
+	<defName>CM_Callout_MildTraits</defName>
+	<traits>
+	  <li>Kind</li>
+      <li>Wimp</li>
+    </traits>
+	<name>MILD</name>
+	<value>true</value>
+  </CM_Callouts.CalloutConstantByTraitDef>
+
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Attack_Common</defName>
+    <rulePack>
+      <rulesStrings>
+	  
+	    <li>rule(MILD==true)->Ti fermerò [Enemy]!</li>
+		<li>rule(MILD==true)->Non costringermi a farti del male!</li>
+		<li>rule(MILD==true)->Prendi questo!</li>
+		
+	    <li>rule->Faccio come [INITIATOR_WEAPON_title] comanda!</li>
+		<li>rule->Salutate il mio piccolo [INITIATOR_WEAPON_label]!</li>
+		<li>rule->E' ora di dire addio al tuo culo!</li>
+		<li>rule->E' ora di fare un pisolino!</li>
+		<li>rule->Salutate [callout_noun_afterlife_greeter] per me!</li>
+		<li>rule->Fine della corsa per te, amico!</li>
+		<li>rule->Di' addio...</li>
+		
+        <li>rule(MILD!=true)->Ci rivedremo all'inferno!</li>
+        <li>rule(MILD!=true)->Sveglia, è ora di morire!</li>
+		<li>rule(MILD!=true)->[INITIATOR_WEAPON_label] non uccide la gente... Io uccido la gente!</li>
+        <li>rule(MILD!=true)->Ci rivedremo all'inferno!</li>
+        <li>rule(MILD!=true)->Sveglia, è ora di morire!</li>
+		<li>rule(MILD!=true)->mangia merda e muori!</li>
+		
+		<li>rule(SPICY==true)->Vai a dormire [callout_noun_insult_vulgar]!</li>
+		<li>rule(SPICY==true)->Sto andando a [callout_verb_decorate] il mio [callout_noun_room] con il tuo [Gore]!</li>
+		<li>rule(SPICY==true)->dopo questo uccidero' tuo [PersonFamily]!</li>
+		
+		<li>callout_noun_afterlife_greeter->Il diavolo</li>
+		<li>callout_noun_afterlife_greeter->il tristo mietitore</li>
+		<li>callout_noun_afterlife_greeter->gli angeli</li>
+		<li>callout_noun_afterlife_greeter->Kim Jong-il</li>
+		
+		<li>callout_noun_insult_vulgar->Puttana</li>
+		<li>callout_noun_insult_vulgar->Figlio di puttana</li>
+		<li>callout_noun_insult_vulgar->Stronzo</li>
+		<li>callout_noun_insult_vulgar->Testa di cazzo</li>
+		
+		<li>callout_verb_decorate->decorare</li>
+		<li>callout_verb_decorate->abbellire</li>
+		<li>callout_verb_decorate->addobbare</li>
+		<li>callout_verb_decorate->adornare</li>
+		<li>callout_verb_decorate->dipingere</li>
+		<li>callout_verb_decorate->coprire</li>
+		
+		<li>callout_noun_room->camera da letto</li>
+		<li>callout_noun_room->cucina</li>
+		<li>callout_noun_room->bagno</li>
+		<li>callout_noun_room->sala da pranzo</li>
+		<li>callout_noun_room->ingresso</li>
+		<li>callout_noun_room->sala giochi</li>
+		<li>callout_noun_room->ripostiglio</li>
+		<li>callout_noun_room->giardino</li>
+		
+		<li>callout_verb_rip->strappare</li>
+		<li>callout_verb_rip->tragliare</li>
+		<li>callout_verb_rip->tirare</li>
+		<li>callout_verb_rip->lacerare</li>
+		
+		<li>callout_noun_bodypart->callout_noun_bodypart_external</li>
+		<li>callout_noun_bodypart->callout_noun_bodypart_internal</li>
+		
+		<li>callout_noun_bodypart_external->leg</li>
+		<li>callout_noun_bodypart_external->arm</li>
+		<li>callout_noun_bodypart_external->face</li>
+		
+		<li>callout_noun_bodypart_internal->cuore</li>
+		<li>callout_noun_bodypart_internal->cervello</li>
+		<li>callout_noun_bodypart_internal->fegato</li>
+		<li>callout_noun_bodypart_internal->polmone</li>
+		<li>callout_noun_bodypart_internal->pancreas</li>
+		<li>callout_noun_bodypart_internal->intestino</li>
+		<li>callout_noun_bodypart_internal->stomaco</li>
+		<li>callout_noun_bodypart_internal->colonna vertebrale</li>
+		
+		<li>callout_noun_orifice->culo</li>
+		<li>callout_noun_orifice->bocca</li>
+		<li>callout_noun_orifice->orecchio</li>
+		<li>callout_noun_orifice->naso</li>
+		
+		<li>callout_noun_meal->colazione</li>
+		<li>callout_noun_meal->seconda colazione</li>
+		<li>callout_noun_meal->brunch</li>
+		<li>callout_noun_meal->pranzo</li>
+		<li>callout_noun_meal->cena</li>
+		<li>callout_noun_meal->merenda</li>
+		
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Ranged_Attack</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+	    
+		<li>rule(MILD==true)->yippie kayak, altri secchi!</li>
+		
+	    <li>rule->eat [INITIATOR_WEAPON_projectile_labelPlural]!</li>
+		<li>rule(p=0.5)->il mio [INITIATOR_WEAPON_projectile_labelPlural] oscurerà il sole!</li>
+		<li>rule->non puoi nasconderti dietro questo [RECIPIENT_COVER_label] per sempre!</li>
+		
+		<li>rule(SPICY==true)->continua ad abbracciare quel [RECIPIENT_COVER_label], [callout_noun_insult_vulgar]!</li>
+	    
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Melee_Attack</defName>
+	<include>
+      <li>CM_Callouts_RulePack_Attack_Common</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+		<li>rule->assaggia il mio [INITIATOR_WEAPON_stuffLabel]!</li>
+        <li>rule->Ti spacco il culo nel prossimo quadrante!</li>
+		<li>rule->venite a prenderne un po'!</li>
+		
+		<li>rule(MILD!=true)->Ti sopprimero' come un [Animal]</li>
+		<li>rule(MILD!=true)->ora hai risvegliato il [AnimalBadass]!</li>
+		<li>rule(MILD!=true)->Ti costruisco una fabbrica di stivali nel culo!</li>
+		<li>rule(MILD!=true)->Io [callout_verb_rip] tu un altro [callout_noun_orifice] buco</li>
+		<li>rule(MILD!=true)->Spero che tu sia pronto per un [INITIATOR_WEAPON_label] nel tuo [callout_noun_bodypart_internal]!</li>
+		<li>rule(MILD!=true)->io [callout_verb_rip] dal tuo [callout_noun_bodypart_external] e ti picchiero' a morte con quello!</li>
+		
+		<li>rule(MILD!=true)->io [callout_verb_rip] fuori dal tuo [callout_noun_bodypart_internal] e mangiarlo!</li>
+		<li>rule(SPICY==true)->Non vedo l'ora di raccogliere il tuo [callout_noun_bodypart_internal]!</li>
+		<li>rule(SPICY==true)->io [callout_verb_rip] dal tuo [callout_noun_bodypart_external] e ficcarlo nel tuo [callout_noun_orifice]!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>CM_Callouts_RulePack_Drafted</defName>
+    <rulePack>
+      <rulesStrings>
+	  
+	    <li>rule(MILD==true)->porta i miei pantaloni marroni!</li>
+		<li>rule(MILD==true)->non c'è nessun altro?</li>
+		<li>rule(MILD==true)->chi,io?</li>
+		<li>rule(MILD==true)->Perchè io!?</li>
+		<li>rule(MILD==true)->possiamo parlarne?!</li>
+		
+		<li>rule(SPICY!=true)->Mi batto per [ConceptPositive]!</li>
+		<li>rule(SPICY!=true)->il mio [PersonalCharacteristic] dovrebbe tornare utile!</li>
+		
+		<li>rule->Per [INITIATOR_factionName]!</li>
+		<li>rule->Facciamo [INITIATOR_factionName] grande ancora una volta!</li>
+		<li>rule->Hai il mio [INITIATOR_WEAPON_label]!</li>
+		<li>rule->Pronto a partire!</li>
+		<li>rule->Facciamolo!</li>
+		<li>rule->Dov'è l'azione?</li>
+		<li>rule->Fammi vedere cosa sai fare!</li>
+        <li>rule->Sicura carica</li>
+        <li>rule->Mostratemi un culo e lo prenderò a calci!</li>
+        <li>rule->Diavolo, sì, sono pronto! E tu?</li>
+		<li>rule->il giorno del [ConceptBadass] è qui!</li>
+		
+		<li>rule(SPICY==true)->il [AdjectiveBadass] [PersonBadass] di [ConceptBadass] è qui!</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
+
+
+
+
+
+
+
